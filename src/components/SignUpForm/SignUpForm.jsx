@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import { useLocalStorage } from 'hooks/useLocalStorage';
+import React from 'react';
 
 const SignUpForm = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useLocalStorage('email', '');
+  const [password, setPassword] = useLocalStorage('password', '');
 
   const handleChange = e => {
     const { name, value } = e.target;
